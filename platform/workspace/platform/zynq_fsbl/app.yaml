@@ -1,0 +1,4 @@
+domain_path: /home/serg/Documents/Xilinx/ZynqBroot/platform/workspace/platform/zynq_fsbl/zynq_fsbl_bsp
+app_src_dir: /tools/xilinx/2025.2/Vitis/data/embeddedsw/lib/sw_apps/zynq_fsbl
+template: zynq_fsbl
+lang: c

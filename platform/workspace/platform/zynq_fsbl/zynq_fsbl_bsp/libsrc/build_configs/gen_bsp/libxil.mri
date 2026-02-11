@@ -1,0 +1,19 @@
+create libxil.a
+addlib /home/serg/Documents/Xilinx/ZynqBroot/platform/workspace/platform/zynq_fsbl/zynq_fsbl_bsp/libsrc/build_configs/gen_bsp/libsrc/xadcps/src/libxadcps.a
+addlib /home/serg/Documents/Xilinx/ZynqBroot/platform/workspace/platform/zynq_fsbl/zynq_fsbl_bsp/libsrc/build_configs/gen_bsp/libsrc/vtc/src/libvtc.a
+addlib /home/serg/Documents/Xilinx/ZynqBroot/platform/workspace/platform/zynq_fsbl/zynq_fsbl_bsp/libsrc/build_configs/gen_bsp/libsrc/video_common/src/libvideo_common.a
+addlib /home/serg/Documents/Xilinx/ZynqBroot/platform/workspace/platform/zynq_fsbl/zynq_fsbl_bsp/libsrc/build_configs/gen_bsp/libsrc/v_tpg/src/libv_tpg.a
+addlib /home/serg/Documents/Xilinx/ZynqBroot/platform/workspace/platform/zynq_fsbl/zynq_fsbl_bsp/libsrc/build_configs/gen_bsp/libsrc/v_frmbuf_wr/src/libv_frmbuf_wr.a
+addlib /home/serg/Documents/Xilinx/ZynqBroot/platform/workspace/platform/zynq_fsbl/zynq_fsbl_bsp/libsrc/build_configs/gen_bsp/libsrc/v_frmbuf_rd/src/libv_frmbuf_rd.a
+addlib /home/serg/Documents/Xilinx/ZynqBroot/platform/workspace/platform/zynq_fsbl/zynq_fsbl_bsp/libsrc/build_configs/gen_bsp/libsrc/uartps/src/libuartps.a
+addlib /home/serg/Documents/Xilinx/ZynqBroot/platform/workspace/platform/zynq_fsbl/zynq_fsbl_bsp/libsrc/build_configs/gen_bsp/libsrc/ttcps/src/libttcps.a
+addlib /home/serg/Documents/Xilinx/ZynqBroot/platform/workspace/platform/zynq_fsbl/zynq_fsbl_bsp/libsrc/build_configs/gen_bsp/libsrc/sdps/src/libsdps.a
+addlib /home/serg/Documents/Xilinx/ZynqBroot/platform/workspace/platform/zynq_fsbl/zynq_fsbl_bsp/libsrc/build_configs/gen_bsp/libsrc/scuwdt/src/libscuwdt.a
+addlib /home/serg/Documents/Xilinx/ZynqBroot/platform/workspace/platform/zynq_fsbl/zynq_fsbl_bsp/libsrc/build_configs/gen_bsp/libsrc/scutimer/src/libscutimer.a
+addlib /home/serg/Documents/Xilinx/ZynqBroot/platform/workspace/platform/zynq_fsbl/zynq_fsbl_bsp/libsrc/build_configs/gen_bsp/libsrc/scugic/src/libscugic.a
+addlib /home/serg/Documents/Xilinx/ZynqBroot/platform/workspace/platform/zynq_fsbl/zynq_fsbl_bsp/libsrc/build_configs/gen_bsp/libsrc/gpiops/src/libgpiops.a
+addlib /home/serg/Documents/Xilinx/ZynqBroot/platform/workspace/platform/zynq_fsbl/zynq_fsbl_bsp/libsrc/build_configs/gen_bsp/libsrc/dmaps/src/libdmaps.a
+addlib /home/serg/Documents/Xilinx/ZynqBroot/platform/workspace/platform/zynq_fsbl/zynq_fsbl_bsp/libsrc/build_configs/gen_bsp/libsrc/devcfg/src/libdevcfg.a
+addlib /home/serg/Documents/Xilinx/ZynqBroot/platform/workspace/platform/zynq_fsbl/zynq_fsbl_bsp/libsrc/build_configs/gen_bsp/libsrc/coresightps_dcc/src/libcoresightps_dcc.a
+save
+end

@@ -1,0 +1,8 @@
+//arch = zynq; split = false; format = BIN
+the_ROM_image:
+{
+	 [bootloader] bifimage/fsbl.elf
+	 bifimage/top_design_wrapper.bit
+	 bifimage/u-boot.elf
+	 [load=0x100000] bifimage/system-top.dtb
+}

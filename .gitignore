@@ -1,0 +1,6 @@
+# Ignore build output directory
+/platform/bifimage/top_design_wrapper.bit
+/platform/bifimage/system-top.dts
+/platform/bifimage/system-top.dtb
+/platform/bifimage/fsbl.elf
+/platform/bifimage/u-boot.elf
