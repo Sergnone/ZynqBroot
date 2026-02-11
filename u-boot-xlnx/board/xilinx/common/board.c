@@ -431,7 +431,11 @@ static int env_set_by_index(const char *name, int index, char *data)
 int board_late_init_xilinx(void)
 {
 	u32 ret = 0;
-	int i, id, macid = 0;
+	int id = 0;
+#ifdef	CONFIG_CMD_NET
+	int macid = 0;
+	int i = 0;
+#endif
 	struct xilinx_board_description *desc;
 	phys_size_t bootm_size = gd->ram_top - gd->ram_base;
 	u64 bootscr_flash_offset, bootscr_flash_size;
@@ -507,12 +511,13 @@ int board_late_init_xilinx(void)
 			if (!(CONFIG_IS_ENABLED(NET) ||
 			      CONFIG_IS_ENABLED(NET_LWIP)))
 				continue;
-
+#ifdef	CONFIG_CMD_NET
 			for (i = 0; i < EEPROM_HDR_NO_OF_MAC_ADDR; i++) {
 				if (is_valid_ethaddr((const u8 *)desc->mac_addr[i]))
 					ret |= eth_env_set_enetaddr_by_index("eth",
 							macid++, desc->mac_addr[i]);
 			}
+#endif
 		}
 	}
 
