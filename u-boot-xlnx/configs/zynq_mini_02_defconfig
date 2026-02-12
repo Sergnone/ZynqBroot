@@ -1,3 +1,11 @@
+#
+# Automatically generated file; DO NOT EDIT.
+# U-Boot 2025.01 Configuration
+#
+
+#
+# Compiler: arm-linux-gnueabihf-gcc (Ubuntu 13.3.0-6ubuntu2~24.04) 13.3.0
+#
 CONFIG_CREATE_ARCH_SYMLINK=y
 CONFIG_HAVE_SETJMP=y
 CONFIG_SUPPORT_LITTLE_ENDIAN=y
@@ -1181,6 +1189,7 @@ CONFIG_CLK_ZYNQ=y
 #
 CONFIG_DFU=y
 CONFIG_DFU_WRITE_ALT=y
+# CONFIG_DFU_TFTP is not set
 CONFIG_DFU_TIMEOUT=y
 CONFIG_DFU_MMC=y
 # CONFIG_DFU_MTD is not set
@@ -1528,8 +1537,55 @@ CONFIG_MTD_UBI_BEB_LIMIT=20
 CONFIG_PHY_RESET_DELAY=0
 # CONFIG_FSL_PFE is not set
 CONFIG_ETH=y
+CONFIG_DM_ETH=y
 # CONFIG_DM_ETH_PHY is not set
-# CONFIG_NETDEVICES is not set
+CONFIG_NETDEVICES=y
+# CONFIG_PHY_GIGE is not set
+# CONFIG_ALTERA_TSE is not set
+# CONFIG_BCM_SF2_ETH is not set
+# CONFIG_BCMGENET is not set
+# CONFIG_BNXT_ETH is not set
+# CONFIG_CALXEDA_XGMAC is not set
+# CONFIG_DWC_ETH_XGMAC is not set
+# CONFIG_DRIVER_DM9000 is not set
+# CONFIG_DWC_ETH_QOS is not set
+# CONFIG_EEPRO100 is not set
+# CONFIG_ETH_DESIGNWARE is not set
+# CONFIG_ETH_DESIGNWARE_MESON8B is not set
+# CONFIG_ETHOC is not set
+# CONFIG_FMAN_ENET is not set
+# CONFIG_FTMAC100 is not set
+# CONFIG_FTGMAC100 is not set
+# CONFIG_MCFFEC is not set
+# CONFIG_KS8851_MLL is not set
+# CONFIG_LITEETH is not set
+# CONFIG_MACB is not set
+# CONFIG_NET_NPCM750 is not set
+# CONFIG_PCH_GBE is not set
+# CONFIG_RGMII is not set
+# CONFIG_MII is not set
+# CONFIG_RMII is not set
+# CONFIG_PCNET is not set
+# CONFIG_QE_UEC is not set
+# CONFIG_RTL8139 is not set
+# CONFIG_SMC911X is not set
+# CONFIG_SUN7I_GMAC is not set
+# CONFIG_SUN4I_EMAC is not set
+# CONFIG_SUN8I_EMAC is not set
+# CONFIG_SH_ETHER is not set
+# CONFIG_DRIVER_TI_CPSW is not set
+# CONFIG_DRIVER_TI_EMAC is not set
+# CONFIG_DRIVER_TI_KEYSTONE_NET is not set
+# CONFIG_TULIP is not set
+# CONFIG_XILINX_AXIEMAC is not set
+# CONFIG_VSC7385_ENET is not set
+# CONFIG_XILINX_EMACLITE is not set
+# CONFIG_ZYNQ_GEM is not set
+# CONFIG_SYS_DPAA_QBMAN is not set
+# CONFIG_TSEC_ENET is not set
+# CONFIG_MEDIATEK_ETH is not set
+# CONFIG_HIFEMAC_ETH is not set
+# CONFIG_HIGMACV300_ETH is not set
 # CONFIG_NVME is not set
 # CONFIG_NVME_APPLE is not set
 

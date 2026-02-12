@@ -21,10 +21,9 @@ mv top_design_wrapper_02.bit top_design_wrapper.bit
 mv ps7_cortexa9_0_baremetal.dts system-top.dts
 dtc -I dts -O dtb -o system-top.dtb system-top.dts
 
-
-cd ../..
+cd ..
 python3 1.build_bootbin.py
-
+cd ..
 sudo cp platform/BOOT.bin images
 sudo rm platform/BOOT.bin
 
