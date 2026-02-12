@@ -7,19 +7,18 @@ UBOOTDIR=u-boot-xlnx
 sudo rm -r images
 sudo mkdir images
 sudo rm $BIFDIR/top_design_wrapper.bit
-sudo rm $BIFDIR/system-top.dts
+#sudo rm $BIFDIR/system-top.dts
 sudo rm $BIFDIR/fsbl.elf
 
 sudo cp $PLATFDIR/hw/sdt/top_design_wrapper_02.bit $BIFDIR
 sudo cp $PLATFDIR/zynq_fsbl/build/fsbl.elf  $BIFDIR
-sudo cp $PLATFDIR/zynq_fsbl/zynq_fsbl_bsp/hw_artifacts/ps7_cortexa9_0_baremetal.dts $BIFDIR
-
+#sudo cp $PLATFDIR/zynq_fsbl/zynq_fsbl_bsp/hw_artifacts/ps7_cortexa9_0_baremetal.dts $BIFDIR
 sudo cp $UBOOTDIR/u-boot.elf $BIFDIR
 
 cd $BIFDIR
 mv top_design_wrapper_02.bit top_design_wrapper.bit
-mv ps7_cortexa9_0_baremetal.dts system-top.dts
-dtc -I dts -O dtb -o system-top.dtb system-top.dts
+#mv ps7_cortexa9_0_baremetal.dts system-top.dts
+#dtc -I dts -O dtb -o system-top.dtb system-top.dts
 
 cd ..
 python3 1.build_bootbin.py
