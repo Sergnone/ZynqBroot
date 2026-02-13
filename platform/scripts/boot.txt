@@ -1,0 +1,13 @@
+# Boot script
+################
+setenv devicetype mmc
+setenv devnum 0
+setenv bootpart 1
+setenv kerneladdr 0x03008000
+setenv ramaddr 0x02000000
+setenv dtbaddr 0x01f00000
+
+fatload ${devicetype} ${devnum}:${bootpart} ${dtbaddr} devicetree.dtb
+fatload ${devicetype} ${devnum}:${bootpart} ${ramaddr} rootfs.cpio.uboot
+fatload ${devicetype} ${devnum}:${bootpart} ${kerneladdr} uImage  
+bootm ${kerneladdr} ${ramaddr} ${dtbaddr}
