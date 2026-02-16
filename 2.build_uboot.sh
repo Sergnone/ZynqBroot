@@ -2,11 +2,14 @@
 
 export CROSS_COMPILE=arm-linux-gnueabihf-
 export ARCH=arm
-#export DEVICE_TREE=zynq-mini-port
-
+SCRDIR=platform/scripts
+UBOOTDIRCFG=u-boot-xlnx/configs
+DEFCONF=uboot_zynq_mini_defconfig
+sudo rm $UBOOTDIRCFG/$DEFCONF
+cp $PWD/board/configs/$DEFCONF $UBOOTDIRCFG/$DEFCONF
 cd u-boot-xlnx
-#make clean
-#make distclean
-make zynq_mini_02_defconfig
+make clean
+make distclean
+make $DEFCONF
 make
 cd ..
