@@ -1,10 +1,12 @@
 # Ignore build output directory
 /platform/bifimage/top_design_wrapper.bit
-/platform/bifimage/system-top.dts
-/platform/bifimage/system-top.dtb
 /platform/bifimage/fsbl.elf
 /platform/bifimage/u-boot.elf
+/platform/bifimage/zynq-boot.dtb
+/platform/bifimage/zynq-boot.dts
 
 /platform/workspace
 
 /u-boot-xlnx/configs/uboot_zynq_mini_defconfig
+/images/BOOT.bin
+
