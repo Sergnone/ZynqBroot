@@ -4,3 +4,5 @@
 /platform/bifimage/system-top.dtb
 /platform/bifimage/fsbl.elf
 /platform/bifimage/u-boot.elf
+
+/u-boot-xlnx/configs/uboot_zynq_mini_defconfig
