@@ -12,12 +12,10 @@ source $VITISDIR
 sudo rm -r images
 mkdir images
 sudo rm $BIFDIR/$DWRAPPERIN
-#sudo rm $BIFDIR/system-top.dts
 sudo rm $BIFDIR/fsbl.elf
 
 cp $PLATFDIR/hw/sdt/$DWRAPPERIN $BIFDIR
 cp $PLATFDIR/zynq_fsbl/build/fsbl.elf  $BIFDIR
-#sudo cp $PLATFDIR/zynq_fsbl/zynq_fsbl_bsp/hw_artifacts/ps7_cortexa9_0_baremetal.dts $BIFDIR
 cp $UBOOTDIR/u-boot.elf $BIFDIR
 
 cd $BIFDIR

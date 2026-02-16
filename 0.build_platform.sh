@@ -6,3 +6,4 @@ cd platform
 sudo rm -r workspace
 vitis -s 0.build_platform.py
 cd ..
+

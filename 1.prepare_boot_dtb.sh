@@ -12,5 +12,3 @@ cd $BIFDIR
 mv ps7_cortexa9_0_baremetal.dts zynq-boot.dts
 dtc -I dts -O dtb -o zynq-boot.dtb zynq-boot.dts
 cd ../..
-#sudo cp $BIFDIR/zynq-mini-port.dts $UBOOTDIR/arch/arm/dts
-
