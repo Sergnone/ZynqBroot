@@ -1,0 +1,5 @@
+config BR2_PACKAGE_DYNCLK
+	bool "DYNCLK driver support"
+	select BR2_LINUX_KERNEL_MODULES_BUILD
+	help
+        Implement DynCLK driver

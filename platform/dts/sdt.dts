@@ -1878,8 +1878,7 @@
                         xlnx,ip-name = "axi_dynclk";
                         xlnx,edk-iptype = "PERIPHERAL";
                         reg = <0x43c10000 0x10000>;
-                        clocks = <&clkc 0xf>,
-                         <&clkc 0xf>;
+                        clocks = <&clkc 0xf>,<&clkc 0xf>;
                         xlnx,name = "axi_dynclk_0";
                 };
 
@@ -1953,6 +1952,7 @@
                         xlnx,has-y-u-v8-420 = <0x0>;
                         xlnx,num-video-components = <0x3>;
                         xlnx,aximm-data-width = <0x40>;
+                        //reset-gpios = <&gpio0 54 1>;
                 };
 
                 v_frmbuf_wr_0: v_frmbuf_wr@43c30000 {
@@ -2025,6 +2025,7 @@
                         xlnx,has-y-u-v8-420 = <0x0>;
                         xlnx,num-video-components = <0x3>;
                         xlnx,aximm-data-width = <0x40>;
+                        //reset-gpios = <&gpio0 55 1>;
                 };
 
                 v_tc_0: v_tc_0@43c20000 {
@@ -2179,6 +2180,7 @@
                         xlnx,s-axi-ctrl-data-width = <0x20>;
                         xlnx,display-port = <0x1>;
                         xlnx,name = "v_tpg_0";
+                        reset-gpios = <&gpio0 56 1>;
 
                         tpg_portsv_tpg_0: ports {
                                 phandle = <0x55>;
@@ -2205,6 +2207,21 @@
                                 };
                         };
                 };
+
+
+/*
+                hdmi_encoder: rgb2dvi@0 {
+                        compatible = "digilent,rgb2dvi";
+                        clocks = <&misc_clk_0>,<&clkc 0xf>;
+                        reg = <0x43c40000 0x10000>;
+                        port {
+                                rgb2dvi_in: endpoint {
+                                        remote-endpoint = <&video_out_out>;
+                                };
+                        };
+                };
+*/
+
 
                 vcap_v_tpg_0 {
                         compatible = "xlnx,video";
@@ -2259,6 +2276,17 @@
 
         chosen {
                 stdout-path = "serial0:115200n8";
+/*
+                hdmi_fb: v_frmbuf_rd@43c40000 {
+                        compatible = "simple-framebuffer";
+                        reg = <0x43c40000 (1280 * 720 * 3)>;
+                        width = <1280>;
+                        height = <720>;
+                        stride = <(1280 * 3)>;
+                        format = "r8g8b8";
+                        status = "okay";
+                };
+*/
         };
 
         aliases {

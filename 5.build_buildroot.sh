@@ -1,14 +1,30 @@
 #!/bin/bash
 
+export CROSS_COMPILE=arm-linux-gnueabihf-
+export ARCH=arm
+
 LINDIR=build/linux-865e73109750d465f06dee019396406a354eb9d2
 BIFDIR=platform/bifimage
 SCRDIR=platform/scripts
 UBOOTDIR=u-boot-xlnx
 
+export BR2_EXTERNAL="board/configs"
+export BR2_EXTERNAL="/home/serg/Documents/Xilinx/ZynqBroot/boardext"
+
+make br_zynq_defconfig BR2_EXTERNAL=../boardext
+
+make BR2_EXTERNAL=../boardext menuconfig
+
+make linux-menuconfig
+
+make linux-savedefconfig BR2_LINUX_KERNEL_CUSTOM_CONFIG_FILE=$(BR2_EXTERNAL)/kernel/linux.config
+
+#make linux-dirclean
+
 cd buildroot
 make clean
 make distclean
-make br_zynq_defconfig BR2_EXTERNAL=$(pwd)/../board
+make br_zynq_defconfig BR2_EXTERNAL=$(pwd)/../boardext
 make O=$PWD ARCH=arm BR2_JLEVEL="6"
 
 #cp images/uImage ../images/
@@ -26,3 +42,10 @@ make O=$PWD ARCH=arm BR2_JLEVEL="6"
 #cd ../..
 #cp $SCRDIR/boot.scr images/
 
+
+
+export BR2_EXTERNAL="/home/serg/Documents/Xilinx/ZynqBroot/boardext"
+make br_zynq_defconfig BR2_EXTERNAL=../boardext
+make linux-menuconfig
+make linux-savedefconfig
+cp output/build/linux-*/defconfig $BR2_EXTERNAL/kernel/kernel.config
