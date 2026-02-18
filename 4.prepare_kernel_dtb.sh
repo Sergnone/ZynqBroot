@@ -55,7 +55,7 @@ sudo rm $DTSDIR/devicetree.dtb
 #mv "$TEMP_FILE" "$INPUT_FILE"
 
 #dtc -I dts -O dtb -o $DTSDIR/sdt.dtb $DTSDIR/sdt.dts
-dtc -I dts -O dtb -o $DTSDIR/sdt.dtb $DTSDIR/sdt-smp.dts
+dtc -I dts -O dtb -o $DTSDIR/sdt.dtb $DTSDIR/sdt.dts
 
 mv $DTSDIR/sdt.dtb $DTSDIR/devicetree.dtb
 cp $DTSDIR/devicetree.dtb  ../images
