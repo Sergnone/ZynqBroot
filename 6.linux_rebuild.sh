@@ -6,6 +6,8 @@ export ARCH=arm
 export BR2_EXTERNAL="/home/serg/Documents/Xilinx/ZynqBroot/boardext"
 
 cd buildroot
+sudo rm -r output/build/dynclk-1.0
+make dynclk-rebuild
 make linux-rebuild
 
 make br_zynq_defconfig BR2_EXTERNAL=../boardext

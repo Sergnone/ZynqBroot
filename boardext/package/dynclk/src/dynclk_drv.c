@@ -361,13 +361,13 @@ static int dglnt_dynclk_enable(struct clk_hw *clk_hw)
 	static void __iomem *reg_base_addr;
 	struct dglnt_dynclk *dglnt_dynclk = clk_hw_to_dglnt_dynclk(clk_hw);
 
-	reg_base_addr = ioremap(0x43c10004, 4);
-	printk("DYNCLK: Base Addr %x:\n", reg_base_addr);
+	//reg_base_addr = ioremap(0x43c10004, 4);
+	//printk("DYNCLK: Base Addr %x:\n", reg_base_addr);
 	if (dglnt_dynclk->freq)
 	{
 		writel(1, dglnt_dynclk->base + OFST_DISPLAY_CTRL);
 		
-		//msleep(8000);
+		//msleep(2000);
 		//printk("DYNCLK: Try 1--:\n");
 		//readl(reg_base_addr);
 		//readl(dglnt_dynclk->base);
@@ -377,11 +377,12 @@ static int dglnt_dynclk_enable(struct clk_hw *clk_hw)
 		//readl(reg_base_addr);
 
 		//readl(0xf0ad0004);
-		//clock_state = readl(dglnt_dynclk->base + OFST_DISPLAY_STATUS);
+		//clock_state = readl(dglnt_dynclk->base + OFST_DISPLAY_CTRL);
+		
+		do {
+			clock_state = readl(dglnt_dynclk->base + OFST_DISPLAY_STATUS);
+		} while (!clock_state);
 		printk("DYNCLK: CLK state: %d\n", clock_state);
-		//do {
-		//	clock_state = readl(dglnt_dynclk->base + OFST_DISPLAY_STATUS);
-		//} while (!clock_state);
 	}
 	else
 	{

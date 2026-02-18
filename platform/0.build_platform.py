@@ -9,7 +9,7 @@ client.set_workspace(path=workspace_location)
 
 # 3. Define platform parameters
 platform_name = 'platform'
-hw_design_xsa = '../XSA/top_design_wrapper.xsa'
+hw_design_xsa = '../XSA/top_design_wrapper-smp.xsa'
 # Example for a standalone (bare-metal) OS
 # os_type = "standalone"
 # cpu_type = "psu_cortexa53_0" 

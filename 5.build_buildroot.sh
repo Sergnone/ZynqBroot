@@ -7,6 +7,7 @@ LINDIR=build/linux-865e73109750d465f06dee019396406a354eb9d2
 BIFDIR=platform/bifimage
 SCRDIR=platform/scripts
 UBOOTDIR=u-boot-xlnx
+DEFCONFNAME=br_zynq_smp_defconfig
 
 export BR2_EXTERNAL="board/configs"
 export BR2_EXTERNAL="/home/serg/Documents/Xilinx/ZynqBroot/boardext"

@@ -9,8 +9,9 @@ DWRAPPEROUT=top_design_wrapper.bit
 
 source $VITISDIR
 
-sudo rm -r images
-mkdir images
+#sudo rm -r images
+#mkdir images
+sudo rm images/BOOT.bin
 sudo rm $BIFDIR/$DWRAPPERIN
 sudo rm $BIFDIR/fsbl.elf
 
