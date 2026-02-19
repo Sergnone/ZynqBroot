@@ -1,5 +1,5 @@
 # Hardware specific drivers go first
-obj-m += dynclk_drv.o
+obj-m += dglnt_hdmi.o
 
 all:
 	$(MAKE) -C $(KDIR) M=$(PWD)

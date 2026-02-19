@@ -1,3 +1,2 @@
 
-source "/home/serg/Documents/Xilinx/ZynqBroot/boardext/package/dynclk/Config.in"
-
+source "/home/serg/Documents/Xilinx/ZynqBroot/boardext/package/dglntdynclk/Config.in"

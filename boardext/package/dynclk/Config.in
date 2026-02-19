@@ -1,4 +1,0 @@
-config BR2_PACKAGE_DYNCLK
-	bool "DYNCLK driver support"
-	help
-        Implement DynCLK driver

@@ -22,7 +22,7 @@
  *
  */
 
-#include "dynclk_drv.h"
+#include "dglntdynclk.h"
 
 #define CLK_BIT_WEDGE 13
 #define CLK_BIT_NOCOUNT 12

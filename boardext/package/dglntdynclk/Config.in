@@ -1,0 +1,4 @@
+config BR2_PACKAGE_DGLNTDYNCLK
+	bool "Digilent DYNCLK driver support"
+	help
+        Implement Digilent DYNCLK driver

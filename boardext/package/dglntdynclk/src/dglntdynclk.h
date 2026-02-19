@@ -1,5 +1,5 @@
-#ifndef _DYNCLK_DRV_H
-#define _DYNCLK_DRV_H
+#ifndef _DGLNT_DYNCLK_H
+#define _DGLNT_DYNCLK_H
 
 #include <linux/platform_device.h>
 #include <linux/clk-provider.h>
