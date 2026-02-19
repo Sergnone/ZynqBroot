@@ -1,2 +1,3 @@
 
-source "/home/serg/Documents/Xilinx/ZynqBroot/boardext/package/dglntdynclk/Config.in"
+source "/home/serg/Documents/Xilinx/ZynqBroot/boardext/package/dglnt_dynclk/Config.in"
+source "/home/serg/Documents/Xilinx/ZynqBroot/boardext/package/dglnt_hdmi/Config.in"

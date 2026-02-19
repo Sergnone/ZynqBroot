@@ -1,5 +1,5 @@
 # Hardware specific drivers go first
-obj-m += dglntdynclk.o
+obj-m += dglnt_dynclk.o
 
 all:
 	$(MAKE) -C $(KDIR) M=$(PWD)

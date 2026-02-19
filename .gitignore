@@ -9,4 +9,9 @@
 
 /u-boot-xlnx/configs/uboot_zynq_mini_defconfig
 /images/BOOT.bin
+/buildroot/build
+/buildroot/staging
+/buildroot/host
+/buildroot/target
+/linux-xlnx
 
