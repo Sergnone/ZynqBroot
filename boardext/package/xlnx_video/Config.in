@@ -1,0 +1,4 @@
+config BR2_PACKAGE_XLNX_VIDEO
+	bool "XLNX_VIDEO application"
+	help
+        Implement XLNX_VIDEO app

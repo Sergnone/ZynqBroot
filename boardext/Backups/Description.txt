@@ -1,1 +1,0 @@
-drm_edid.c in drivers/gpu/drm_edid

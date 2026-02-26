@@ -1,4 +1,0 @@
-config BR2_PACKAGE_DGLNT_HDMI
-	bool "Digilent HDMI driver support"
-	help
-        Implement Digilent HDMI driver

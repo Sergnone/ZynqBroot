@@ -20,11 +20,11 @@ struct digilent_hdmi {
 	bool clk_enabled;
 
 	struct i2c_adapter *i2c_bus;
-	u32 fmax;
-	u32 hmax;
-	u32 vmax;
-	u32 hpref;
-	u32 vpref;
+	uint32_t fmax;
+	uint32_t hmax;
+	uint32_t vmax;
+	uint32_t hpref;
+	uint32_t vpref;
 };
 
 #define connector_to_hdmi(c) container_of(c, struct digilent_hdmi, connector)

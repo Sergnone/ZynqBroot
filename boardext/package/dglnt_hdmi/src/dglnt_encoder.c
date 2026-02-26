@@ -48,11 +48,11 @@ struct digilent_encoder {
 	struct drm_encoder *encoder;
 	struct i2c_adapter *i2c_bus;
    bool i2c_present;
-   u32 fmax;
-   u32 hmax;
-   u32 vmax;
-   u32 hpref;
-   u32 vpref;
+   uint32_t fmax;
+   uint32_t hmax;
+   uint32_t vmax;
+   uint32_t hpref;
+   uint32_t vpref;
 };
 
 static inline struct digilent_encoder *to_digilent_encoder(struct drm_encoder *encoder)

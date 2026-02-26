@@ -1,3 +1,7 @@
 
 source "/home/serg/Documents/Xilinx/ZynqBroot/boardext/package/dglnt_dynclk/Config.in"
 source "/home/serg/Documents/Xilinx/ZynqBroot/boardext/package/dglnt_hdmi/Config.in"
+#source "/home/serg/Documents/Xilinx/ZynqBroot/boardext/package/ll/v_vtc/Config.in"
+#source "/home/serg/Documents/Xilinx/ZynqBroot/boardext/package/v_common/Config.in"
+source "/home/serg/Documents/Xilinx/ZynqBroot/boardext/package/xlnx_video/Config.in"
+source "/home/serg/Documents/Xilinx/ZynqBroot/boardext/package/regwriter/Config.in"

@@ -1,0 +1,4 @@
+config BR2_PACKAGE_REGWRITER
+	bool "RegWriter driver support"
+	help
+        Implement RegWriter driver
