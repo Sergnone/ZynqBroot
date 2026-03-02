@@ -75,10 +75,6 @@
 #include "xil_types.h"
 #include "xpseudo_asm.h"
 #include "bspconfig.h"
-#ifndef SDT
-#include "xparameters.h"
-#include "xdebug.h"
-#endif
 
 #ifdef __cplusplus
 extern "C" {
@@ -512,9 +508,11 @@ extern XExc_VectorTableEntry XExc_VectorTable[];
 
 /************************** Function Prototypes *****************************/
 
+/*
 extern void Xil_ExceptionRegisterHandler(uint32_t Exception_id,
 					 Xil_ExceptionHandler Handler,
 					 void *Data);
+*/
 
 extern void Xil_ExceptionRemoveHandler(uint32_t Exception_id);
 extern void Xil_GetExceptionRegisterHandler(uint32_t Exception_id,

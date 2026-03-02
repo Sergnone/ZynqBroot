@@ -303,11 +303,7 @@ extern "C" {
  * device.
  */
 typedef struct {
-#ifndef SDT
-	uint16_t  DeviceId;		/**< Unique ID of device */
-#else
 	char *Name;
-#endif
 	uint32_t  BaseAddress;	/**< Device base address */
 } XAdcPs_Config;
 
@@ -479,11 +475,7 @@ typedef struct {
 /**
  * Functions in xadcps_sinit.c
  */
-#ifndef SDT
-XAdcPs_Config *XAdcPs_LookupConfig(uint16_t DeviceId);
-#else
 XAdcPs_Config *XAdcPs_LookupConfig(uint32_t BaseAddress);
-#endif
 
 /**
  * Functions in xadcps.c

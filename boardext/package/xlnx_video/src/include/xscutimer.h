@@ -108,11 +108,7 @@ extern "C" {
  * This typedef contains configuration information for the device.
  */
 typedef struct {
-#ifndef SDT
-	uint16_t DeviceId;	/**< Unique ID of device */
-#else
 	char *Name;
-#endif
 	uint32_t BaseAddr;	/**< Base address of the device */
 #ifdef XIL_INTERRUPT
 	uint32_t IntrId;
@@ -331,11 +327,7 @@ typedef struct {
 /*
  * Lookup configuration in xscutimer_sinit.c
  */
-#ifndef SDT
-XScuTimer_Config *XScuTimer_LookupConfig(uint16_t DeviceId);
-#else
 XScuTimer_Config *XScuTimer_LookupConfig(uint32_t BaseAddr);
-#endif
 
 /*
  * Selftest function in xscutimer_selftest.c

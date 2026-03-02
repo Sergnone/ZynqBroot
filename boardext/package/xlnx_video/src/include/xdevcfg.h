@@ -180,18 +180,13 @@ typedef void (*XDcfg_IntrHandler) (void *CallBackRef, uint32_t Status);
  * This typedef contains configuration information for the device.
  */
 typedef struct {
-#ifndef SDT
-	uint16_t DeviceId;		/**< Unique ID of device */
-#else
 	char *Name;
-#endif
 	uint32_t BaseAddr;		/**< Base address of the device */
-#ifdef SDT
 	uint32_t IntrId;             /** Bits[11:0] Interrupt-id Bits[15:12]
                                  * trigger type and level flags */
 	uint32_t IntrParent;     /** Bit[0] Interrupt parent type Bit[64/32:1]
                                  * Parent base address */
-#endif
+
 } XDcfg_Config;
 
 /**
@@ -310,11 +305,7 @@ typedef struct {
 /*
  * Lookup configuration in xdevcfg_sinit.c.
  */
-#ifndef SDT
-XDcfg_Config *XDcfg_LookupConfig(uint16_t DeviceId);
-#else
 XDcfg_Config *XDcfg_LookupConfig(uint32_t BaseAddress);
-#endif
 
 /*
  * Selftest function in xdevcfg_selftest.c

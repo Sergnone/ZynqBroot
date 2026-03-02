@@ -12,12 +12,12 @@
 #include <linux/types.h>
 
 
-#define REGW_NODES_COUNT        128
+#define REGW_NODES_COUNT        16
 #define REGW_CMD_REMAP          1
 #define REGW_CMD_READ           2
 #define REGW_CMD_WRITE          3
 
-#define REGW_ARG_MAXLEN         12
+#define REGW_ARG_MAXLEN         16
 
 #define REGW_RMAP_SIZE          0x100
 

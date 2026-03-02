@@ -54,7 +54,7 @@
 #define OFST_DISPLAY_LOCK_L 0x18
 #define OFST_DISPLAY_FLTR_LOCK_H 0x1C
 
-static const uint64_t lock_lookup[64] = {
+static const u64 lock_lookup[64] = {
    0b0011000110111110100011111010010000000001,
    0b0011000110111110100011111010010000000001,
    0b0100001000111110100011111010010000000001,
@@ -121,7 +121,7 @@ static const uint64_t lock_lookup[64] = {
    0b1111111111001111101011111010010000000001
 };
 
-static const uint32_t filter_lookup_low[64] = {
+static const u32 filter_lookup_low[64] = {
 	 0b0001011111,
 	 0b0001010111,
 	 0b0001111011,
@@ -194,11 +194,11 @@ struct dglnt_dynclk;
 
 
 
-uint32_t dglnt_dynclk_divider(uint32_t divide)
+u32 dglnt_dynclk_divider(u32 divide)
 {
-	uint32_t output = 0;
-	uint32_t highTime = 0;
-	uint32_t lowTime = 0;
+	u32 output = 0;
+	u32 highTime = 0;
+	u32 lowTime = 0;
 
 	if ((divide < 1) || (divide > 128))
 		return ERR_CLKDIVIDER;
@@ -222,10 +222,10 @@ uint32_t dglnt_dynclk_divider(uint32_t divide)
 	return output;
 }
 
-uint32_t dglnt_dynclk_count_calc(uint32_t divide)
+u32 dglnt_dynclk_count_calc(u32 divide)
 {
-	uint32_t output = 0;
-	uint32_t divCalc = 0;
+	u32 output = 0;
+	u32 divCalc = 0;
 
 	divCalc = dglnt_dynclk_divider(divide);
 	if (divCalc == ERR_CLKDIVIDER)
@@ -256,9 +256,9 @@ int dglnt_dynclk_find_reg (struct dglnt_dynclk_reg *regValues,
 	if (regValues->divclk == ERR_CLKDIVIDER)
 		return -EINVAL;
 
-	regValues->lockL = (uint32_t) (lock_lookup[clkParams->fbmult - 1] & 0xFFFFFFFF);
+	regValues->lockL = (u32) (lock_lookup[clkParams->fbmult - 1] & 0xFFFFFFFF);
 
-	regValues->fltr_lockH = (uint32_t) ((lock_lookup[clkParams->fbmult - 1] >> 32) & 0x000000FF);
+	regValues->fltr_lockH = (u32) ((lock_lookup[clkParams->fbmult - 1] >> 32) & 0x000000FF);
 	regValues->fltr_lockH |= ((filter_lookup_low[clkParams->fbmult - 1] << 16) & 0x03FF0000);
 
 	return 0;
@@ -275,7 +275,7 @@ void dglnt_dynclk_write_reg (struct dglnt_dynclk_reg *regValues, void __iomem *b
 }
 
 
-uint32_t dglnt_dynclk_find_mode(uint32_t freq, uint32_t parentFreq, struct dglnt_dynclk_mode *bestPick)
+uint32_t dglnt_dynclk_find_mode(u32 freq, u32 parentFreq, struct dglnt_dynclk_mode *bestPick)
 {
 	uint32_t bestError = MMCM_FREQ_OUTMAX;
 	uint32_t curError;

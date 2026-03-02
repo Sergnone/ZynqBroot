@@ -108,9 +108,6 @@ extern "C" {
 /***************************** Include Files *********************************/
 #include "xil_types.h"
 #include "bspconfig.h"
-#ifndef SDT
-#include "xparameters.h"
-#endif
 
 /************************** Constant Definitions *****************************/
 

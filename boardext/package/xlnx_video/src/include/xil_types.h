@@ -128,7 +128,7 @@ typedef struct
 typedef char char8;
 typedef int8_t s8;
 typedef int16_t s16;
-typedef int32_t s32;
+typedef int32_t int32;
 typedef int64_t s64;
 typedef uint64_t uint64_t;
 typedef int sint32;

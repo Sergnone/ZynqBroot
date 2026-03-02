@@ -273,24 +273,17 @@ extern "C" {
  * This typedef contains configuration information for the device.
  */
 typedef struct {
-#ifndef SDT
-	uint16_t DeviceId;	 /**< Unique ID  of device */
-#else
 	char *Name;
-#endif
 	uint32_t BaseAddress; /**< Base address of device (IPIF) */
 	uint32_t InputClockHz;/**< Input clock frequency */
 	uint32_t ModemPinsConnected; /** Specifies whether modem pins are connected
 				 *  to MIO or FMIO */
-#if defined  (XCLOCKING) || defined(SDT)
 	uint32_t RefClk;             /**< Input clock frequency */
-#endif
-#if defined(SDT)
+
 	uint32_t IntrId;             /** Bits[11:0] Interrupt-id Bits[15:12]
 				 * trigger type and level flags */
 	uint32_t IntrParent;     /** Bit[0] Interrupt parent type Bit[64/32:1]
 				 * Parent base address */
-#endif
 } XUartPs_Config;
 
 /* Keep track of state information about a data buffer in the interrupt mode. */
@@ -455,11 +448,7 @@ typedef struct {
 /************************** Function Prototypes *****************************/
 
 /* Static lookup function implemented in xuartps_sinit.c */
-#ifndef SDT
-XUartPs_Config *XUartPs_LookupConfig(uint16_t DeviceId);
-#else
 XUartPs_Config *XUartPs_LookupConfig(uint32_t BaseAddress);
-#endif
 
 /* Interface functions implemented in xuartps.c */
 uint32_t XUartPs_CfgInitialize(XUartPs *InstancePtr,

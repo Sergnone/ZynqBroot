@@ -7,6 +7,11 @@ client = vitis.create_client()
 workspace_location = "workspace"
 client.set_workspace(path=workspace_location)
 
+#app_comp = client.get_component(name='my_app')
+# 3. Access the component's configuration
+#cfg = app_comp.get_config()
+
+
 # 3. Define platform parameters
 platform_name = 'platform'
 hw_design_xsa = '../XSA/top_design_wrapper.xsa'
@@ -16,6 +21,7 @@ hw_design_xsa = '../XSA/top_design_wrapper.xsa'
 # Example for Linux OS
 os_type = "linux"
 cpu_type = "ps7_cortexa9_0" # or another appropriate processor
+#compiler_type = "gcc"
 
 # 4. Create the Platform Component
 platform_comp = client.create_platform_component(

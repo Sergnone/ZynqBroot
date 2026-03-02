@@ -8,11 +8,7 @@
 extern "C" {
 #endif
 
-#ifdef SDT
 #include "xilffs_config.h"
-#else
-#include "xparameters.h"
-#endif
 
 /*---------------------------------------------------------------------------/
 / Function Configurations
@@ -248,11 +244,7 @@ extern "C" {
 
 #define FF_MIN_SS		512
 #ifdef XPAR_XUFSPSXC_NUM_INSTANCES
-#ifdef SDT
 #define FF_MAX_SS		FILE_SYSTEM_MAX_SECTOR_SIZE
-#else
-#define FF_MAX_SS               4096
-#endif
 #else
 #define FF_MAX_SS		512
 #endif

@@ -13,12 +13,12 @@
 #include <linux/delay.h>
 
 struct dglnt_dynclk_reg{
-    uint32_t clk0L;
-    uint32_t clkFBL;
-    uint32_t clkFBH_clk0H;
-    uint32_t divclk;
-    uint32_t lockL;
-    uint32_t fltr_lockH;
+    u32 clk0L;
+    u32 clkFBL;
+    u32 clkFBH_clk0H;
+    u32 divclk;
+    u32 lockL;
+    u32 fltr_lockH;
 };
 
 struct dglnt_dynclk_mode{
@@ -35,10 +35,10 @@ struct dglnt_dynclk {
 };
 
 
-uint32_t dglnt_dynclk_divider(uint32_t divide);
-uint32_t dglnt_dynclk_count_calc(uint32_t divide);
+uint32_t dglnt_dynclk_divider(u32 divide);
+uint32_t dglnt_dynclk_count_calc(u32 divide);
 void dglnt_dynclk_write_reg (struct dglnt_dynclk_reg *regValues, void __iomem *baseaddr);
-uint32_t dglnt_dynclk_find_mode(uint32_t freq, uint32_t parentFreq, struct dglnt_dynclk_mode *bestPick);
+uint32_t dglnt_dynclk_find_mode(u32 freq, u32 parentFreq, struct dglnt_dynclk_mode *bestPick);
 int dglnt_dynclk_find_reg (struct dglnt_dynclk_reg *regValues, struct dglnt_dynclk_mode *clkParams);
 int dglnt_dynclk_start_work(struct dglnt_dynclk *dglnt_dynclk,
 							unsigned long parent_rate);

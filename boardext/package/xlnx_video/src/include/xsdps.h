@@ -185,11 +185,7 @@ extern "C" {
  * This typedef contains configuration information for the device.
  */
 typedef struct {
-#ifndef SDT
-	uint16_t DeviceId;			/**< Unique ID  of device */
-#else
 	char *Name;
-#endif
 	uint32_t BaseAddress;		/**< Base address of the device */
 	uint32_t InputClockHz;		/**< Input clock frequency */
 	uint32_t CardDetect;			/**< Card Detect */
@@ -199,9 +195,7 @@ typedef struct {
 	uint32_t HasEMIO;			/**< If SD is connected to EMIO */
 	uint8_t SlotType;			/**< Slot type */
 	uint8_t IsCacheCoherent; 		/**< If SD is Cache Coherent or not */
-#if defined  (XCLOCKING) || defined (SDT)
 	uint32_t RefClk;			/**< Input clocks */
-#endif
 	uint32_t ITapDly_SDR_Clk50;	/**< Input Tap delay for HSD/SDR25 modes */
 	uint32_t OTapDly_SDR_Clk50;	/**< Output Tap delay for HSD/SDR25 modes */
 	uint32_t ITapDly_DDR_Clk50;	/**< Input Tap delay for DDR50 modes */
@@ -307,18 +301,11 @@ typedef struct {
 /**
  * XSdPs Configuration Table
  */
-#ifndef SDT
-extern XSdPs_Config XSdPs_ConfigTable[XPAR_XSDPS_NUM_INSTANCES];
-#else
 extern XSdPs_Config XSdPs_ConfigTable[];
-#endif
 
 /************************** Function Prototypes ******************************/
-#ifndef SDT
-XSdPs_Config *XSdPs_LookupConfig(uint16_t DeviceId);
-#else
 XSdPs_Config *XSdPs_LookupConfig(uint32_t BaseAddress);
-#endif
+
 uint32_t XSdPs_CfgInitialize(XSdPs *InstancePtr, XSdPs_Config *ConfigPtr,
 			uint32_t EffectiveAddr);
 uint32_t XSdPs_CardInitialize(XSdPs *InstancePtr);

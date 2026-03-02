@@ -45,6 +45,8 @@ static int regwriter_unmap(void)
 			table_args[i][REGW_ARG_HW_ADDR] = 0x00000000;
 			table_args[i][REGW_ARG_VAL] = 0x00000000;
 			table_args[i][REGW_ARG_VT_ADDR] = 0x00000000;
+			table_args[i][REGW_ARG_HW_ADDR_END] = 0x00000000;
+			table_args[i][REGW_ARG_VT_ADDR_ACTIVE] = 0x00000000;
 			return REGW_CMPT;
 		}
 	}
@@ -93,7 +95,8 @@ static int regwriter_map(uint32_t defsz_flag)
 				table_args[i][REGW_ARG_HW_ADDR] = argval_n[REGW_ARG_HW_ADDR];
 				table_args[i][REGW_ARG_VAL] = argval_n[REGW_ARG_VAL];
 				table_args[i][REGW_ARG_VT_ADDR] = (uint32_t)io_mem_base;
-				table_args[i][REGW_ARG_HW_ADDR_END] = argval_n[REGW_ARG_HW_ADDR] + REGW_RMAP_SIZE;
+				table_args[i][REGW_ARG_HW_ADDR_END] = argval_n[REGW_ARG_HW_ADDR] + 
+														(REGW_RMAP_SIZE - 1);
 				table_args[i][REGW_ARG_VT_ADDR_ACTIVE] = table_args[i][REGW_ARG_VT_ADDR];
 				printk(KERN_INFO "REGWRITER: Reg remapped OK! %08x\n", 
 								table_args[i][REGW_ARG_VT_ADDR]);
@@ -133,8 +136,9 @@ static int regwriter_write(void)
 	stat = regwriter_map(1);
 	if(stat == REGW_USED || stat == REGW_CMPT)
 	{
-		printk(KERN_INFO "REGWRITER: WR %08x\n", 
-								table_args[table_pointer][REGW_ARG_VT_ADDR_ACTIVE]);
+		printk(KERN_INFO "REGWRITER: WR %08x %08x\n", 
+								table_args[table_pointer][REGW_ARG_VT_ADDR_ACTIVE],
+								argval_n[2]);
 		iowrite32(argval_n[2],
 						(volatile void *)table_args[table_pointer][REGW_ARG_VT_ADDR_ACTIVE]);
 		return REGW_CMPT;
