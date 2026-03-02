@@ -7,7 +7,7 @@ XV_Mix_l2           mix;
 
 //XVMix_GetLayerColorFormat(&mix, XVMIX_LAYER_MASTER, &Cfmt);
 
-/*--------------------------------------------------------------------*/
+/*--------------------------------------------------------------------------------*/
 void V_VMIX_ConfigStream(XVidC_VideoStream *StreamPtr)
 {
   XV_Mix_l2 *MixerPtr = &mix;

@@ -5,3 +5,4 @@ source "/home/serg/Documents/Xilinx/ZynqBroot/boardext/package/dglnt_hdmi/Config
 #source "/home/serg/Documents/Xilinx/ZynqBroot/boardext/package/v_common/Config.in"
 source "/home/serg/Documents/Xilinx/ZynqBroot/boardext/package/xlnx_video/Config.in"
 source "/home/serg/Documents/Xilinx/ZynqBroot/boardext/package/regwriter/Config.in"
+source "/home/serg/Documents/Xilinx/ZynqBroot/boardext/package/aoncv/Config.in"

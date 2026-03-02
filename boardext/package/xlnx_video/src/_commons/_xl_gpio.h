@@ -14,4 +14,5 @@ int V_GPIO_Init(XGpioPs *x_gpio,
 				uintptr_t bAddress,
 			 	uintptr_t x_gpio_ptr);
 int V_GPIO_SetHigh(XGpioPs *x_gpio);
+int V_GPIO_SetLow(XGpioPs *x_gpio);
 #endif

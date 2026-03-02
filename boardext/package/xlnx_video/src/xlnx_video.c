@@ -26,7 +26,7 @@ static int xv_main_app(void)
 {
     uint32_t pix_freq = 0;
     int stride = 0;
-    //uint32_t i = 0;
+    uintptr_t i = 0;
     XVidC_VideoStream VidStream;
     XVidC_ColorFormat Cfmt = 0;
     XVidC_ColorFormat Mfmt = 0;
@@ -35,11 +35,13 @@ static int xv_main_app(void)
     //RGP_USR_FBRD_BASEADDR
 	printf("=========================================================\r\n");
 	printf("Start Drivers\r\n");
+	V_GPIO_Init(&gpio, RGP_USR_GPIO_BASEADDR, gpio_ptr);
+    V_GPIO_SetLow(&gpio);
+    sleep(2);
+    V_GPIO_SetHigh(&gpio);
 	V_VTC_Init(&vtc, RGP_USR_VTC_BASEADDR, vtc_ptr);
 	V_TPG_Init(&tpg0, RGP_USR_TPG_0_BASEADDR, tpg0_ptr);
 	V_TPG_Init(&tpg1, RGP_USR_TPG_1_BASEADDR, tpg1_ptr);
-	V_GPIO_Init(&gpio, RGP_USR_GPIO_BASEADDR, gpio_ptr);
-    V_GPIO_SetHigh(&gpio);
 	V_FBWR_Init(&frmbufwr, RGP_USR_FBWR_BASEADDR, fbwr_ptr);
     //frmbufwr.FrmbufWr.Config.BaseAddress = fbwr_ptr;
 	V_FBRD_Init(&frmbufrd, RGP_USR_FBRD_BASEADDR, fbrd_ptr);
@@ -77,6 +79,21 @@ static int xv_main_app(void)
 	V_FBWR_ConfigBuf(stride, Mfmt, &VidStream);
 	V_VMIX_ConfigStream(&VidStream);
 	V_TPG_ConfigStream(&tpg1,&VidStream);
+
+	XV_tpg_Set_height(&tpg0, TimingPtr->VActive);
+	XV_tpg_Set_width(&tpg0, TimingPtr->HActive);
+	XV_tpg_Set_colorFormat(&tpg0, XVIDC_CSF_RGB);
+	XV_tpg_Set_bckgndId(&tpg0, XTPG_BKGND_CHECKER_BOARD);
+	XV_tpg_Set_ovrlayId(&tpg0, 0);
+	XV_tpg_EnableAutoRestart(&tpg0);
+	XV_tpg_Start(&tpg0);
+	printf("Successfully ran Example\r\n");
+	sleep(5);
+	for(i=0;i<255;i+=5)
+	{
+		sleep(1);
+		XV_mix_Set_HwReg_layerAlpha_1(&mix.Mix, i);
+	}
     return 0;
 }
 

@@ -1,0 +1,4 @@
+config BR2_AONCV
+	bool "OpenCV test application"
+	help
+        Implement OpenCV app
